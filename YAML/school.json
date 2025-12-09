@@ -1,0 +1,40 @@
+{
+  "Schools": 
+  [
+    {
+      "Students": 
+      [
+        {
+          "rno": "21",
+          "name": "sonu",
+          "marks": "21"
+        },
+        {
+          "rno": "20",
+          "name": "sagnik",
+          "marks": "12"
+        }
+      ],
+      "_name": "MLZS",
+      "_principal": "abc"
+    },
+
+    {
+      "Students": 
+      [
+        {
+          "rno": "243",
+          "name": "raja",
+          "marks": "54"
+        },
+        {
+          "rno": "234",
+          "name": "konas",
+          "marks": "42"
+        }
+      ],
+      "_name": "BCMS",
+      "_principal": "hfg"
+    }
+  ]
+}

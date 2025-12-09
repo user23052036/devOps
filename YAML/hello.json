@@ -1,0 +1,30 @@
+{
+    "2036": 
+    [
+        3,
+        4,
+        2,
+        33
+    ],
+    "key": "value",
+    "Key": "Value",
+
+    "cities": 
+    [
+        "kolkata",
+        "mumbai",
+        "chennai",
+        "tokyo"
+    ],
+
+    "allways needs key":
+    [
+        "hi",
+        "hello",
+        "hola",
+        "arigato",
+        "Oiii"
+    ],
+    "mango": "fruit",
+    "apple": "red fruit"
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <root>
+    <Schools>
+
+        <Students>
+
+            <rno>21</rno>
+            <name>sonu</name>
+            <marks>21</marks>
+
+        </Students>
+
+        <Students>
+
+            <rno>20</rno>
+            <name>sagnik</name>
+            <marks>12</marks>
+
+        </Students>
+
+        <_name>MLZS</_name>
+        <_principal>abc</_principal>
+
+    </Schools>
+
+    <Schools>
+
+        <Students>
+
+            <rno>243</rno>
+            <name>raja</name>
+            <marks>54</marks>
+
+        </Students>
+
+        <Students>
+
+            <rno>234</rno>
+            <name>konas</name>
+            <marks>42</marks>
+
+        </Students>
+        
+        <_name>BCMS</_name>
+        <_principal>hfg</_principal>
+
+    </Schools>
+ </root>

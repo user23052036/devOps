@@ -1,0 +1,33 @@
+--- # document1 starts
+
+# stores key value pair, YAML is case sensitive, MAPS key must be unique
+
+"key" : "value"
+"Key" : "Value"
+2036 : [3,4,2,33]  # Inline list (flow style)
+
+
+--- # document2 starts
+
+cities:    # Block list (indentation + dash style)
+ - kolkata
+ - mumbai
+ - chennai
+ - tokyo
+
+--- # document3 starts
+
+# Lists
+
+- hi
+- hello
+- hola
+- arigato
+- Oiii
+ 
+---
+{mango: "fruit", apple: "red fruit"}  
+# but in JSON every key needs to be a string.It allows unquoted strings when they are simple words.
+
+
+... # end of document
