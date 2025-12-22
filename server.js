@@ -25,6 +25,22 @@ app.use(express.static("public"));
 // example = password
 // localhost = MongoDB running on same machine
 // 27017 = default MongoDB port
+
+// mongo = service name in compose.yml
+// Docker provides internal DNS automatically only when you define app: inside the compose.yaml
+
+/*
+  app:
+    build: .
+    container_name: testApp
+    ports: 
+     - "5050:5050"
+    environment:
+      MONGO_URL : mongodb://root:example@mongo:27017
+    depends_on:
+     - mongo
+*/
+
 const MONGO_URL = "mongodb://root:example@localhost:27017";
 
 // Create MongoDB client object
@@ -38,7 +54,8 @@ const client = new MongoClient(MONGO_URL);
 app.get("/getUsers", async (req, res) => {
 
     // Connect to MongoDB server
-    await client.connect(MONGO_URL);
+    // connect() does NOT take a URL when already passed in constructor.
+    await client.connect();
     console.log("Connected successfully to MongoDB");
 
     // Select database

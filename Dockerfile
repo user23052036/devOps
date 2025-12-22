@@ -1,15 +1,13 @@
+FROM node:20-alpine
 
-FROM node
+WORKDIR /testApp
 
-ENV MONGO_INITDB_ROOT_USERNAME=root \
-      MONGO_INITDB_ROOT_PASSWORD=example
+COPY package*.json ./
 
-RUN mkdir -p testApp
+RUN npm install
 
-#copy from parent folder to newly created folder testApp
-COPY . /testApp        
+COPY . .
 
-CMD ["node","/testApp/server.js"]
+EXPOSE 5050
 
-
- 
+CMD ["node", "server.js"]

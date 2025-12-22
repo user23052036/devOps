@@ -9,6 +9,7 @@ This document provides a step-by-step guide to creating a Dockerfile for a Node.
 A `Dockerfile` is a text document that contains all the commands a user could call on the command line to assemble an image.
 
 ### 1.1. Minimal Dockerfile for a Node.js App
+
 Create a file named `Dockerfile` (no extension) in your project's root directory.
 
 ```dockerfile
@@ -66,14 +67,18 @@ CMD ["node", "server.js"]
 ## 2. Building and Running the Docker Container
 
 ### 2.1. Build the Docker Image
+
 From your terminal, navigate to your project folder and run:
+
 ```bash
 docker build -t testapp .
 ```
+
 - `-t testapp`: Tags the image with the name `testapp`.
 - `.`: Specifies the build context (the current directory).
 
 ### 2.2. Run the Container
+
 To run the application container and connect it to a running MongoDB container, they must be on the same Docker network.
 
 ```bash
@@ -94,15 +99,19 @@ docker run -d \
 ## 3. Connecting to MongoDB from a Docker Container
 
 ### 3.1. The MongoDB Connection URL
+
 When your Node.js application is running inside a Docker container, it cannot use `localhost` to connect to the MongoDB container. Instead, you must use the MongoDB container's service name.
 
 **Update the MongoDB URL in `server.js`:**
+
 ```js
 const MONGO_URL = "mongodb://root:example@mongo:27017/kiit-db?authSource=admin";
 ```
+
 - **`mongo`**: This is the service name of the MongoDB container. Docker's internal DNS will resolve this name to the MongoDB container's IP address on the shared network.
 
 ### 3.2. Visualizing the Workflow
+
 ```
 [Browser]
     |
@@ -124,20 +133,27 @@ const MONGO_URL = "mongodb://root:example@mongo:27017/kiit-db?authSource=admin";
 ## 4. Verification and Troubleshooting
 
 ### 4.1. Useful Commands
+
 - **Check running containers:**
+
   ```bash
   docker ps
   ```
+
 - **View container logs:**
+
   ```bash
   docker logs testapp
   ```
+
 - **Test the API endpoint:**
+
   ```bash
   curl http://localhost:5050/getUsers
   ```
 
 ### 4.2. Common Mistakes to Avoid
+
 - **Using `localhost` for the MongoDB connection** when the app is in a container.
 - **Forgetting `?authSource=admin`** in the connection string if the root user was created in the `admin` database.
 - **Not placing the Node.js and MongoDB containers on the same Docker network.**

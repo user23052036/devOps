@@ -1,5 +1,11 @@
 {
-  "dependencies": {
+  "scripts": 
+  {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": 
+  {
     "express": "^4.21.2",
     "mongodb": "^6.13.0"
   }
