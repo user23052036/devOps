@@ -7,6 +7,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME : root
       MONGO_INITDB_ROOT_PASSWORD : example
+    volumes:
+      - mongo_data:/data/db   # 🔑 THIS is the key line
   
   mongo-express:
     image: mongo-express:latest
@@ -20,3 +22,7 @@ services:
       ME_CONFIG_MONGODB_SERVER : mongo
     depends_on:
       - mongo
+      
+volumes:
+  mongo_data:
+
