@@ -1,3 +1,5 @@
 ipykernel
 pandas
 python-dotenv
+# ipython-sql
+jupysql
