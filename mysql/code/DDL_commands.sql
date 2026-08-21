@@ -18,7 +18,11 @@
 -- =====================================================
 
 
+CREATE DATABASE campusx;
+DROP DATABASE campusx;
 
+CREATE DATABASE IF NOT EXISTS campusx;
+DROP DATABASE IF EXISTS campusx;
 
 -- =====================================================
 -- 1. CREATE TABLE
